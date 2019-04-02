@@ -1,7 +1,13 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>LSTM</span>
-    <a href="/leetcode">
+    <span>
+      <a routerLink="/">
+        <button mat-flat-button color="primary">
+          <h1>LSTM</h1>
+        </button>
+      </a>
+    </span>
+    <a routerLink="/leetcode">
       <button mat-flat-button color="primary">
         LC Summary
       </button>
@@ -13,3 +19,4 @@
     </a>
   </mat-toolbar-row>
 </mat-toolbar>
+<router-outlet></router-outlet>
