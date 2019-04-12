@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LeetcodeService } from '../leetcode.service';
+import { Leetcode } from '../leetcode';
 
 @Component({
   selector: 'app-lc-overview',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LcOverviewComponent implements OnInit {
 
-  constructor() { }
+  leetcodes: Leetcode[];
+
+  constructor(private leetcodeService: LeetcodeService) { }
 
   ngOnInit() {
+    this.getLeetcodes();
   }
 
+  getLeetcodes(): void {
+    this.leetcodeService.getLeetcodes()
+      .subscribe(leetcodes => this.leetcodes = leetcodes);
+  }
 }

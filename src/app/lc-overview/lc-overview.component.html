@@ -1,3 +1,9 @@
-<p>
-  lc-overview works!
-</p>
+<h1>
+  it works!
+</h1>
+
+<mat-nav-list>
+  <mat-list-item *ngFor="let leetcode of leetcodes">
+    <mat-card>{{ leetcode.title }}</mat-card>
+  </mat-list-item>
+</mat-nav-list>
